@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: rgba(252, 252, 252, 0.938);
+}
+
+header {
+   background:#38393aa2
+   color: black;
+   padding: 25px;
+   text-align: center;
+}
+
+/* Navigation */
+nav {
+    background: rgba(213, 239, 243, 0.671);
+    padding: 15px 0;
+}
+
+nav ul li{
+    margin: 10px;
+    
+}
+
+nav ul li a {
+    color: rgb(46, 44, 44);
+    text-decoration: none;
+    padding: 8px 15px;
+   background-color: rgba(252, 252, 252, 0.938);
+    border-radius: 10px;
+    
+    
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background: rgb(94, 89, 97);
+    color: #ffffff;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    border-radius: 10px;
+}
+
+/* sidebar */
+aside{
+    background:rgb(190, 194, 196);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* sidebar list */
+aside ul{
+    list-style: none;
+}
+
+aside ul li {
+    margin: 10px 0;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+aside ul li a:hover {
+    color: white;
+}
+
+/* sections */
+section{
+    margin-bottom: 20px;
+}
+
+/* Article Cards */
+.card {
+    background:rgba(188, 189, 180, 0.452);
+    padding: 15px;
+    border-radius:10px;
+    box-shadow: 0 4px 8px  rgba(0,0,0,0.1);
+}
+
+footer{
+    text-align: center;
+    padding: 15px;
+    background:rgb(26, 31, 34);
+    color: white;
+    
+    bottom: 0;
+    width: 100%;
+
+}
+
+/* for part 3 */
+/* Navigation flexbox */
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+
+}
+
+/* flexbox for articles */
+.Articles{
+    display:flex;
+    gap: 15px;
+}
+
+/* Equal articles sizes */
+.card {
+    flex: 1;
+}
+
+/* css for part 4 */
+/* Grid layout */
+.container {
+    display: grid;
+    grid-template-areas: "main aside";
+    grid-temlate-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+main {
+    grid-area: main;
+}
+
+aside{
+    grid-area: aside;
+}
+
+/*css for part 5 */
+nav ul li a {
+    transition: 0.3s;
+}
+
+/* hover animation */
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* animation */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.card {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .container {
+        grid-template-areas:
+            "main"
+            "aside";
+        grid-template-columns: 1fr;
+    }
+
+    .articles {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Advanced Selectors */
+.card:nth-child(2) {
+    border: 2px solid #2c7be5;
+}
+
+.card::before {
+    content: "★ ";
+    color: gold;
+}
+
+.b{
+    background-image: url("hspt.jpg");
+        background-size: cover; 
+    background-repeat: no-repeat;
+        height: 600px;
+        width: 100%;
+}
