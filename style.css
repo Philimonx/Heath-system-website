@@ -16,14 +16,33 @@ header {
    text-align: center;
 }
 
+ .b{
+    background-image: url("hspt.jpg");
+        background-size: cover; 
+    background-repeat: no-repeat;
+        height: 600px;
+        width: 100%;
+}
+
+
 /* Navigation */
 nav {
     background: rgba(213, 239, 243, 0.671);
-    padding: 15px 0;
+    padding: 7px 0;
+    display:flex;
+    justify-content: end;
 }
+
+nav ul{
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+
 
 nav ul li{
     margin: 10px;
+   
     
 }
 
@@ -80,10 +99,24 @@ section{
 /* Article Cards */
 .card {
     background:rgba(188, 189, 180, 0.452);
-    padding: 15px;
+    padding: 25px;
     border-radius:10px;
     box-shadow: 0 4px 8px  rgba(0,0,0,0.1);
 }
+
+.card2 {
+    background:rgba(169, 174, 245, 0.452);
+    padding: 35px;
+    margin: 20px 0;
+    border-radius:10px;
+    box-shadow: 0 4px 8px  rgba(0,0,0,0.1);
+}
+
+.b h2 {
+    text-align: center;
+    margin-top: 170px;
+}
+
 
 footer{
     text-align: center;
@@ -188,10 +221,125 @@ nav ul li a {
     color: gold;
 }
 
-.b{
-    background-image: url("hspt.jpg");
-        background-size: cover; 
-    background-repeat: no-repeat;
-        height: 600px;
-        width: 100%;
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media screen and (max-width: 768px){
+
+    /* Navigation Bar */
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav ul li{
+        margin:10px 0;
+    }
+
+    /* Main Grid Layout */
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    /* Articles Section */
+    .Articles{
+        grid-template-columns:1fr;
+    }
+
+    /* Images */
+    img{
+        width:100%;
+        height:auto;
+    }
+
+    /* Header Text */
+    header h1{
+        font-size:24px;
+        text-align:center;
+    }
+
+    /* Main Content */
+    main{
+        width:100%;
+    }
+
+    /* Sidebar */
+    aside{
+        margin-top:20px;
+    }
+
+    /* Form Inputs */
+    form input,
+    form textarea{
+        width:100%;
+    }
+
+    /* Buttons */
+    button{
+        width:100%;
+    }
+
+    /* Cards */
+    .card{
+        padding:15px;
+    }
+
+    /* Text */
+    p{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    h3{
+        font-size:18px;
+    }
+}
+
+/* Small Phones */
+@media screen and (max-width: 480px){
+
+    header{
+        padding:15px;
+    }
+
+    header h1{
+        font-size:20px;
+    }
+
+    nav{
+        padding:10px;
+    }
+
+    nav ul li a{
+        font-size:16px;
+    }
+
+    .container{
+        padding:10px;
+    }
+
+    .card{
+        padding:10px;
+    }
+
+    p{
+        font-size:14px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    h3{
+        font-size:17px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:15px;
+    }
 }
