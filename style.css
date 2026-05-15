@@ -4,16 +4,8 @@
     box-sizing: border-box;
 }
 
-.container{
-    grid-template-columns: 3fr 1fr;
- 
-    display:flex;
-    flex-direction:column;
-}
-
 body{
     font-family: Arial, sans-serif;
-        overflow-x:hidden;
     background-color: rgba(252, 252, 252, 0.938);
 }
 
@@ -31,19 +23,6 @@ header {
         height: 600px;
         width: 100%;
 }
-
-main{
-    width:100%;
-    padding:20px;
-}
-
-/* Section Styling */
-main section{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
-
 
 
 /* Navigation */
@@ -121,7 +100,6 @@ section{
 .card {
     background:rgba(188, 189, 180, 0.452);
     padding: 25px;
-    width: 100%;
     border-radius:10px;
     box-shadow: 0 4px 8px  rgba(0,0,0,0.1);
 }
@@ -213,57 +191,59 @@ nav ul li a {
     animation: fadeIn 1s ease-in;
 }
 
-/* ================= MOBILE RESPONSIVENESS ================= */
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .container {
+        grid-template-areas:
+            "main"
+            "aside";
+        grid-template-columns: 1fr;
+    }
+
+    .articles {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Advanced Selectors */
+.card:nth-child(2) {
+    border: 2px solid #2c7be5;
+}
+
+.card::before {
+    content: "★ ";
+    color: gold;
+}
+
+
+/* ================= RESPONSIVE DESIGN ================= */
 
 @media screen and (max-width: 768px){
-           
-    
 
-
-
-    /* Navigation */
+    /* Navigation Bar */
     nav ul{
-        display:flex;
         flex-direction:column;
         align-items:center;
-        width:100%;
-        padding:0;
     }
 
     nav ul li{
         margin:10px 0;
     }
 
-    nav ul li a{
-        display:block;
-        width:100%;
-        text-align:center;
-    }
-
-    /* Main Layout */
+    /* Main Grid Layout */
     .container{
-        display:flex;
-        flex-direction:column;
-        padding:10px;
+        grid-template-columns:1fr;
     }
 
-    /* Articles */
+    /* Articles Section */
     .Articles{
-        display:flex;
-        flex-direction:column;
-        gap:20px;
-    }
-
-    /* Cards */
-    .card{
-        width:100%;
-        margin:0;
-    }
-
-    /* Sidebar */
-    aside{
-        width:100%;
-        margin-top:20px;
+        grid-template-columns:1fr;
     }
 
     /* Images */
@@ -272,20 +252,42 @@ nav ul li a {
         height:auto;
     }
 
-    /* Header */
-    header{
-        text-align:center;
-        padding:15px;
-    }
-
+    /* Header Text */
     header h1{
         font-size:24px;
+        text-align:center;
+    }
+
+    /* Main Content */
+    main{
+        width:100%;
+    }
+
+    /* Sidebar */
+    aside{
+        margin-top:20px;
+    }
+
+    /* Form Inputs */
+    form input,
+    form textarea{
+        width:100%;
+    }
+
+    /* Buttons */
+    button{
+        width:100%;
+    }
+
+    /* Cards */
+    .card{
+        padding:15px;
     }
 
     /* Text */
     p{
         font-size:15px;
-        line-height:1.7;
+        line-height:1.6;
     }
 
     h2{
@@ -295,111 +297,49 @@ nav ul li a {
     h3{
         font-size:18px;
     }
-
-    /* Footer */
-    footer{
-        width:100%;
-        text-align:center;
-        padding:15px;
-        margin-top:20px;
-    }
-
-    /* Forms */
-    form{
-        width:100%;
-    }
-
-    form input,
-    form textarea,
-    button{
-        width:100%;
-    }
-
-    
 }
 
-
-/* ================= SMALL PHONE FIX ================= */
-
+/* Small Phones */
 @media screen and (max-width: 480px){
 
-    body{
-        overflow-x:hidden;
+    header{
+        padding:15px;
+    }
+
+    header h1{
+        font-size:20px;
     }
 
     nav{
         padding:10px;
     }
 
-    nav ul{
-        gap:10px;
-    }
-
-    nav ul li{
-        width:100%;
-    }
-
     nav ul li a{
-        background:#ddd;
-        padding:10px;
-        border-radius:5px;
+        font-size:16px;
     }
 
     .container{
-        padding:5px;
+        padding:10px;
     }
 
     .card{
-        padding:15px;
+        padding:10px;
     }
 
-    aside{
-        padding:15px;
+    p{
+        font-size:14px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    h3{
+        font-size:17px;
     }
 
     footer{
         font-size:14px;
-    }
-}
-
-
-@media screen and (max-width: 480px){
-
-    body{
-        overflow-x:hidden;
-    }
-
-    nav{
-        padding:10px;
-    }
-
-    nav ul{
-        gap:10px;
-    }
-
-    nav ul li{
-        width:100%;
-    }
-
-    nav ul li a{
-        background:#ddd;
-        padding:10px;
-        border-radius:5px;
-    }
-
-    .container{
-        padding:5px;
-    }
-
-    .card{
         padding:15px;
-    }
-
-    aside{
-        padding:15px;
-    }
-
-    footer{
-        font-size:14px;
     }
 }
